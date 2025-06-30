@@ -1,0 +1,35 @@
+{
+  "name": "Go routine",
+  "image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aldijav.golangwithdidi",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "nhoizey.gremlins",
+        "kennylong.kubernetes-yaml-formatter",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-vscode.makefile-tools",
+        "christian-kohler.path-intellisense",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "github.vscode-github-actions",
+        "GitHub.copilot",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+  "mounts": [
+    {
+      "type": "bind",
+      "source": "${localEnv:HOME}/.ssh",
+      "target": "/home/vscode/.ssh"
+    },
+    {
+      "type": "bind",
+      "source": "${localEnv:HOME}/.gitconfig",
+      "target": "/home/vscode/.gitconfig"
+    }
+  ],
+  "initializeCommand": "docker network create workshop || true"
+}
