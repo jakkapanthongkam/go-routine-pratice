@@ -10,8 +10,9 @@ var mux sync.Mutex
 
 func increment() {
 	mux.Lock()
+	defer mux.Unlock()
+
 	counter++
-	mux.Unlock()
 }
 
 func main() {
